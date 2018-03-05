@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.auth.isLoggedIn()) {
-      this.router.navigate(['contacts'])
+      this.router.navigate(['contacts']);
     }
   }
 
@@ -32,16 +32,16 @@ export class LoginComponent implements OnInit {
     const payload = {
       username: formValues.username,
       password: formValues.password
-    }
+    };
 
     this.api.post('authenticate', payload)
       .subscribe(data => {
         this.auth.setToken(data.token);
         this.router.navigate(['/contacts']);
       }, (err) => {
-        console.log("%c ERROR:", 'font-size:36px', err.error);
+        console.log('%c ERROR:', 'font-size:36px', err.error);
         this.summary.push(JSON.parse(err.error._body).error);
-      })
+      });
 
 
 

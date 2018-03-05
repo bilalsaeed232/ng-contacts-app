@@ -41,7 +41,7 @@ export class ApiService {
             url: `${this.baseUrl}/${url}`,
             method: method,
             headers: headers
-        })
+        });
 
         if (body) {
             requestOptions.body = body;

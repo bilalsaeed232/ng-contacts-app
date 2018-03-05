@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-    private tokenKey: string = "contacts-api-jwt";
+    private tokenKey = 'contacts-api-jwt';
 
     constructor(private router: Router) { }
 
@@ -25,7 +25,7 @@ export class AuthService {
 
     logout() {
         this.removeToken();
-        this.router.navigate(['login'])
+        this.router.navigate(['login']);
     }
 
 }

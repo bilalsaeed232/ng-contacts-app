@@ -17,7 +17,7 @@ export class ContactListComponent implements OnInit {
   ngOnInit() {
     this.api.get('contacts')
       .subscribe(data => {
-        console.log("body:", data);
+        console.log('body:', data);
         this.contacts = data;
         this.contacts.reverse();
       }

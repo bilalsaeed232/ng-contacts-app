@@ -9,7 +9,7 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
-  loading: boolean = false;
+  loading = false;
   newContact: Contact;
 
   constructor(public api: ApiService) { }
@@ -33,7 +33,7 @@ export class AddContactComponent implements OnInit {
         form.reset();
         this.loading = false;
         this.newContact = data;
-      })
+      });
   }
 
 }

@@ -9,7 +9,7 @@ import { Contact } from '../shared/contact.model';
 export class ContactComponent implements OnInit {
   @Input() contact: Contact;
 
-  @HostBinding('class') columnClass = "four wide column";
+  @HostBinding('class') columnClass = 'four wide column';
 
   constructor() { }
 
