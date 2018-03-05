@@ -1,0 +1,46 @@
+<div class="add-form-container">
+  <div class="ui icon message" *ngIf="newContact">
+    <i class=" notched check green icon"></i>
+    <i class="close icon" (click)="newContact=null"></i>
+    <div class="content">
+      <header>New Contact added!</header>
+      <p>Name: {{newContact.name}}</p>
+    </div>
+  </div>
+  <form class="ui big form" #contactForm="ngForm" (submit)="onSubmit(contactForm)" [class.loading]="loading">
+
+    <div class="fields">
+      <div class="eight wide field">
+        <label for="firstName">First Name</label>
+        <input ngModel type="text" id="firstName" placeholder="First Name" name="firstName">
+      </div>
+      <div class="eight wide field">
+        <label for="lastName">Last Name</label>
+        <input ngModel type="text" id="lastName" placeholder="Last Name" name="lastName">
+      </div>
+    </div>
+    <div class="field">
+      <label for="address">Address</label>
+      <input ngModel type="text" id="address" name="address" placeholder="Address">
+    </div>
+    <div class="equal width fields">
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input ngModel type="text" maxlength="5" placeholder="(###)" name="areaCode">
+      </div>
+      <div class="field">
+        <label for="prefix">&nbsp;</label>
+        <input ngModel type="text" id="prefix" maxlength="3" placeholder="###" name="prefix">
+      </div>
+      <div class="field">
+        <label for="lineNumber">&nbsp;</label>
+        <input ngModel type="text" maxlength="4" placeholder="####" name="lineNumber">
+      </div>
+    </div>
+    <div class="field">
+      <label for="photo">Photo URL</label>
+      <input ngModel type="text" placeholder="http://cdn.com/profile.jpg" id="photo" name="photo">
+    </div>
+    <button class="ui submit large grey button right floated">Submit</button>
+  </form>
+</div>
