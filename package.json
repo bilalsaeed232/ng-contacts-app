@@ -12,7 +12,9 @@
     "watch": "run-p watch:*",
     "sample": "node src/server/data/seed-db.js",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -36,7 +38,8 @@
     "mongodb": "^2.2.26",
     "npm-run-all": "^4.0.2",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",
@@ -56,5 +59,6 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
-  }
+  },
+  "snyk": true
 }
